@@ -38,7 +38,7 @@ public class CondimentsServiceImpl implements CondimentsService {
 	}
 
 	@Transactional
-	public List getAllCondiments() {
+	public List<Condiments> getAllCondiments() {
 		return conDao.getAllCondiments();
 	}
 

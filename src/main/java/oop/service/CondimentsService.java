@@ -13,7 +13,7 @@ public interface CondimentsService {
 
 	public Condiments getCondiments(int id);
 
-	public List getAllCondiments();
+	public List<Condiments> getAllCondiments();
 	
 	public float getTotal(Condiments con);
 }

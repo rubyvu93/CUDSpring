@@ -12,5 +12,5 @@ public interface CondimentsDao {
 
 	public Condiments getCondiments(int id);
 
-	public List getAllCondiments();
+	public List<Condiments> getAllCondiments();
 }

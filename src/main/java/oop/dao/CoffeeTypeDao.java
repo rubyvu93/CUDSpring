@@ -12,7 +12,7 @@ public interface CoffeeTypeDao {
 
 	public CoffeeType getCoffeeType(int id);
 
-	public List getAllCoffee();
+	public List<CoffeeType> getAllCoffee();
 	
 	public void test();
 }

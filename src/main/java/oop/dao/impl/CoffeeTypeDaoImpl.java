@@ -33,8 +33,10 @@ public class CoffeeTypeDaoImpl implements CoffeeTypeDao {
 		
 		return (CoffeeType)session.getCurrentSession().get(CoffeeType.class, id);
 	}
+
+	@SuppressWarnings("unchecked")
 	@Override
-	public List getAllCoffee() {
+	public List<CoffeeType> getAllCoffee() {
 		return session.getCurrentSession().createQuery("from CoffeeType").list();
 	}
 	@Override

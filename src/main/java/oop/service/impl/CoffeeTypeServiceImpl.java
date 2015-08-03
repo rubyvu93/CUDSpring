@@ -38,7 +38,7 @@ public class CoffeeTypeServiceImpl implements CoffeeTypeService {
 	}
 
 	@Transactional
-	public List getAllCoffee() {
+	public List<CoffeeType> getAllCoffee() {
 		return coffeetypeDao.getAllCoffee();
 	}
 	

@@ -2,8 +2,6 @@ package oop.controller;
 
 import java.util.Map;
 
-import javax.naming.Binding;
-
 import oop.model.CoffeeType;
 import oop.service.CoffeeTypeService;
 
@@ -14,12 +12,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CoffeeTypeController {
 	@Autowired
 	private CoffeeTypeService coffeeTypeService;
-
+	private CoffeeType CoffResult = new CoffeeType();
 	@RequestMapping("/index")
 	public String setupForm(Map<String, Object> map) {
 		CoffeeType coffeeType = new CoffeeType();
@@ -29,18 +28,25 @@ public class CoffeeTypeController {
 		//map.put("total", coffeeTypeService.getTotal(coffeeType));
 		return "coffeeType";
 	}
+		
+	@RequestMapping("/addcoffee")
+    public String addingTeam(@ModelAttribute CoffeeType coffee) {
+     
+         
+        return "addcoffee";
+    }
 
-	@RequestMapping("/indexA")
+	/*@RequestMapping("/indexA")
 	public String setupFormA(Map<String, Object> map) {
 		CoffeeType coffeeType = new CoffeeType();
 		coffeeTypeService.getTest();
 		return "index";
-	}
+	}*/
 	
 	@RequestMapping(value = "/coffeetype.do", method = RequestMethod.POST)
 	public String doActions(@ModelAttribute CoffeeType coffeeType,
 			BindingResult result, @RequestParam String action, Map<String, Object> map) {
-		CoffeeType CoffResult = new CoffeeType();
+		
 		switch (action.toLowerCase()) {
 		case "add":
 			coffeeTypeService.add(coffeeType);
@@ -64,6 +70,8 @@ public class CoffeeTypeController {
 		map.put("coffeelist", coffeeTypeService.getAllCoffee());
 		return "coffeeType";
 	}
+	
+	
 	
 	
 }

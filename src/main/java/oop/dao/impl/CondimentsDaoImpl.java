@@ -37,8 +37,9 @@ public class CondimentsDaoImpl implements CondimentsDao {
 		return (Condiments)session.getCurrentSession().get(Condiments.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List getAllCondiments() {
+	public List<Condiments> getAllCondiments() {
 		// TODO Auto-generated method stub
 		return session.getCurrentSession().createQuery("from Condiments").list();
 	}

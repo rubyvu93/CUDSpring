@@ -12,7 +12,7 @@ public interface CoffeeTypeService {
 
 	public CoffeeType getCoffeeType(int id);
 
-	public List getAllCoffee();
+	public List<CoffeeType> getAllCoffee();
 	
 	public float getTotal(CoffeeType coffeeType);
 	
